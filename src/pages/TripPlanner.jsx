@@ -10,7 +10,7 @@ const TripPlanner = () => {
   const [formData, setFormData] = useState(initialState);
   const [isLoading, setIsLoading] = useState(false);
   const [trip, setTrip] = useState();
- 
+
   const handleOnChange = (e) => {
     setFormData((prevStat) => ({
       ...prevStat,
@@ -154,6 +154,34 @@ const TripPlanner = () => {
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Stays */}
+
+            <div className="p-4 my-5 rounded shadow bg-secondary text-white">
+              <h3 className="mb-4">🏨 Stays</h3>
+
+              <div className="row g-4">
+                {trip.stays.map((stay, index) => (
+                  <div className="col-12 col-sm-6 col-lg-4" key={index}>
+                    <div className="bg-dark rounded p-3 h-100 shadow-sm">
+                      <h5 className="fw-semibold">{stay.hotel_name}</h5>
+
+                      <p className="mb-1 opacity-75">
+                        {[...Array(5)].map((_, i) => (
+                          <span key={i}>{i < stay.rating ? "⭐" : "☆"}</span>
+                        ))}
+                      </p>
+
+                      <p className="mb-1 opacity-75">
+                        📍 {stay.distance} miles away
+                      </p>
+
+                      <p className="fw-bold">€{stay.price} / night</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Budget */}

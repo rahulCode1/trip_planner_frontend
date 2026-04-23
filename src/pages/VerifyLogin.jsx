@@ -24,7 +24,7 @@ const VerifyLogin = () => {
     };
 
     handleVerifyLogin();
-  }, []);
+  }, [navigate]);
 
   return (
     <>

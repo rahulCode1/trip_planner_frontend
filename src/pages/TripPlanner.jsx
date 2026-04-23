@@ -83,7 +83,7 @@ const TripPlanner = () => {
     };
 
     handleShowAutoSuggestion();
-  }, [formData.destination]);
+  }, [formData.destination, isSelecting, token]);
 
   const handleSetSuggestion = (suggestion) => {
     setFormData((prevStat) => ({ ...prevStat, destination: suggestion }));

@@ -1,0 +1,19 @@
+.main {
+  background: #0d0f14;
+  min-height: 100vh;
+  padding: 2rem 1.5rem 4rem;
+}
+
+
+
+.container {
+  max-width: 600px;    /* consistent width for both form and plan */
+  margin: 0 auto;      /* centers horizontally in the content area */
+}
+
+/* Stack form then plan, always — no side-by-side ever */
+.planLayout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}

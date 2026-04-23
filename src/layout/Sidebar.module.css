@@ -1,0 +1,11 @@
+/* Sidebar.module.css */
+.sidebar {
+  width: 220px;
+  z-index: 100;
+  padding-top: 1.5rem;
+}
+
+.logoutBtn {
+  /* mt-auto already pushes it down via Bootstrap flex,
+     this is just for any extra overrides if needed */
+}

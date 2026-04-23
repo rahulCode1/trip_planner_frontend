@@ -4,7 +4,14 @@ import "bootstrap/dist/js/bootstrap.bundle.js";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./layout/RootLayout";
 import TripPlanner from "./pages/TripPlanner";
-import Home from "./pages/Home";
+import LoginPage from "./pages/LoginPage";
+import VerifyLogin from "./pages/VerifyLogin";
+import { TravelProvider } from "./context/TravelContext";
+import MyTripsPage, { loader as savedTripLoader } from "./pages/MyTripsPage";
+import TripDetailsPage, {
+  loader as tripDetailsLoader,
+} from "./pages/TripDetailsPage";
+import ProctectRoutes from "./component/ProctectRoutes";
 
 const router = createBrowserRouter([
   {
@@ -13,18 +20,51 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />,
+        element: <TripPlanner />,
+      },
+
+      {
+        path: "login",
+        element: <LoginPage />,
       },
       {
-        path: "tripPlanner",
-        element: <TripPlanner />,
+        path: "v1/profile/google",
+        element: <VerifyLogin />,
+      },
+      {
+        path: "myTrips",
+        children: [
+          {
+            index: true,
+            element: (
+              <ProctectRoutes>
+                <MyTripsPage />
+              </ProctectRoutes>
+            ),
+            loader: savedTripLoader,
+          },
+          {
+            path: ":id",
+            element: (
+              <ProctectRoutes>
+                <TripDetailsPage />
+              </ProctectRoutes>
+            ),
+            loader: tripDetailsLoader,
+          },
+        ],
       },
     ],
   },
 ]);
 
+
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <TravelProvider>
+      <RouterProvider router={router} />
+    </TravelProvider>
+  );
 }
 
 export default App;

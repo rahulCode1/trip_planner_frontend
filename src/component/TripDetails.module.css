@@ -1,0 +1,285 @@
+── Panel labels ──
+.panelLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  width: fit-content;
+}
+.labelOriginal {
+  background: rgba(99, 102, 241, 0.18);
+  color: #a5b4fc;
+}
+.labelUpdated {
+  background: rgba(16, 185, 129, 0.18);
+  color: #6ee7b7;
+}
+
+/* ── Section card ── */
+.sectionCard {
+  background: #1a1d26;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+
+/* ── Header card ── */
+.headerIcon {
+  width: 42px;
+  height: 42px;
+  background: rgba(99, 102, 241, 0.18);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── Meta row ── */
+.metaDivider {
+  width: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  align-self: stretch;
+}
+.metaLabel {
+  font-size: 11px;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin: 0 0 3px;
+}
+.metaValue {
+  font-size: 13px;
+  color: #c9cdd8;
+  margin: 0;
+}
+.metaBig {
+  font-size: 22px;
+  font-weight: 700;
+  color: #f0f1f6;
+}
+
+/* ── Attraction chips ── */
+.attractionChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  font-size: 12px;
+  color: #c9cdd8;
+}
+
+/* ── Itinerary ── */
+.itineraryRow {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.itineraryRow:last-child {
+  border-bottom: none;
+  padding-bottom: 0 !important;
+}
+.dayBadge {
+  min-width: 34px;
+  height: 34px;
+  background: #3b3fd8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+  color: #fff;
+}
+.dayPlan {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ── Stay card ── */
+.stayCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  padding: 12px;
+}
+.stayPrice span {
+  font-size: 11px;
+  font-weight: 400;
+  color: #6b7280;
+}
+
+/* ── Budget tiers ── */
+.budgetTier {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+}
+.tierLabel {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #6b7280;
+  margin: 0 0 4px;
+}
+.tierAmount {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f0f1f6;
+  margin: 0;
+}
+
+/* ── Budget table ── */
+.budgetTableWrap {
+  overflow-x: auto;
+}
+.budgetTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  min-width: 340px;
+}
+.budgetTable th {
+  text-align: left;
+  padding: 8px 10px;
+  color: #6b7280;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.budgetTable td {
+  padding: 8px 10px;
+  color: #c9cdd8;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+.budgetTable tr:last-child td {
+  border-bottom: none;
+}
+.budgetTable tr:hover td {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* ── Tips ── */
+.tipsList {
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+}
+.tipsList li {
+  font-size: 13px;
+  color: #a1a7b5;
+  line-height: 1.6;
+}
+
+/* ── Action buttons ── */
+.btnSave {
+  background: #1d4b3a;
+  color: #6ee7b7;
+  border: none;
+  transition: opacity 0.15s, transform 0.1s;
+}
+.btnSave:hover:not(:disabled) {
+  opacity: 0.85;
+  transform: translateY(-1px);
+  color: #6ee7b7;
+}
+.btnDelete {
+  background: #3b1c1c;
+  color: #f87171;
+  border: none;
+  transition: opacity 0.15s, transform 0.1s;
+}
+.btnDelete:hover:not(:disabled) {
+  opacity: 0.85;
+  transform: translateY(-1px);
+  color: #f87171;
+}
+
+/* ── Topbar ── */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(17, 19, 24, 0.88);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+.topbarTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e8eaf0;
+  margin: 0;
+}
+.topbarSubtitle {
+  font-size: 11px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* ── Single panel max-width ── */
+.singleWrap {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ── Split view wrapper ── */
+.splitScroller {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  /* subtle scrollbar styling */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
+}
+.splitScroller::-webkit-scrollbar {
+  height: 4px;
+}
+.splitScroller::-webkit-scrollbar-track {
+  background: transparent;
+}
+.splitScroller::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 2px;
+}
+
+/* ── Split inner row — always flex, never wraps ── */
+.splitRow {
+  display: flex;
+  flex-wrap: nowrap;
+  min-width: 640px;
+}
+
+/* ── Each panel inside the split ── */
+.splitPanel {
+  flex: 0 0 50%;
+  width: 50%;
+  padding: 0 1rem;
+}
+.splitPanel:first-child {
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ── Swipe hint (mobile only) ── */
+.swipeHint {
+  display: none;
+  text-align: center;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+}
+@media (max-width: 767px) {
+  .swipeHint {
+    display: block;
+  }
+}

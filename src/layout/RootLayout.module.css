@@ -1,0 +1,11 @@
+/* RootLayout.module.css */
+.mainContent {
+  /* no offset on small screens — header sits above in normal flow */
+}
+
+@media (min-width: 768px) {
+  /* md breakpoint matches Bootstrap's d-md-* */
+  .mainContent {
+    margin-left: 220px; /* exactly the sidebar width */
+  }
+}

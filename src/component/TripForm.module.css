@@ -1,0 +1,169 @@
+/* TripForm.module.css */
+
+.wrapper {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+  padding: 1.75rem 1.5rem;
+
+  font-family: 'DM Sans', sans-serif;
+}
+
+.heading {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 0.3rem;
+}
+
+.subtitle {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.35);
+  margin: 0 0 1.5rem;
+}
+
+.label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.input,
+.select {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  color: #f0f0f0;
+  outline: none;
+  font-family: 'DM Sans', sans-serif;
+  transition: border-color 0.15s, background 0.15s;
+  box-sizing: border-box;
+}
+
+.input::placeholder { color: rgba(255, 255, 255, 0.25); }
+
+.input:focus,
+.select:focus {
+  border-color: rgba(79, 140, 255, 0.5);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M3 4.5l3 3 3-3' stroke='%23888' stroke-width='1.2' stroke-linecap='round' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-color: rgba(255, 255, 255, 0.06);
+  padding-right: 32px;
+  cursor: pointer;
+}
+
+.select option {
+  background: #1c1c20;
+  color: #f0f0f0;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.destWrap { position: relative; margin-bottom: 4px; }
+
+.clearBtn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  color: #aaa;
+  font-size: 9px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.suggestions {
+  background: #1e1e22;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin-top: 4px;
+  overflow: hidden;
+}
+
+.suggItem {
+  padding: 10px 14px;
+  font-size: 0.82rem;
+  color: #ccc;
+  cursor: pointer;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.06);
+  margin: 0;
+  transition: background 0.1s;
+}
+
+.suggItem:last-child { border-bottom: none; }
+.suggItem:hover { background: rgba(255, 255, 255, 0.07); color: #fff; }
+
+.budgetWrap { position: relative; }
+
+.currencyPrefix {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.35);
+  pointer-events: none;
+}
+
+.budgetInput { padding-left: 26px; }
+
+.divider {
+  border: none;
+  border-top: 0.5px solid rgba(255, 255, 255, 0.07);
+  margin: 1.25rem 0;
+}
+
+.submitBtn {
+  width: 100%;
+  background: linear-gradient(135deg, #4f8cff, #38c8a0);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: opacity 0.15s, transform 0.1s;
+  letter-spacing: 0.01em;
+}
+
+.submitBtn:hover:not(:disabled) { opacity: 0.88; transform: translateY(-1px); }
+.submitBtn:disabled { opacity: 0.35; cursor: not-allowed; }

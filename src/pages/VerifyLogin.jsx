@@ -16,7 +16,9 @@ const VerifyLogin = () => {
 
         const data = await res.json();
 
-        localStorage.setItem("token", data);
+        console.log(data.token);
+
+        localStorage.setItem("token", data.token);
         return navigate("/");
       } catch (error) {
         console.log(error);

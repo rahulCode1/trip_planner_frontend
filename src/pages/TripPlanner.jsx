@@ -17,7 +17,6 @@ const TripPlanner = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isSelecting, setIsSelecting] = useState(false);
   const { trip, setTrip } = useTravelContext();
-  const token = process.env.REACT_APP_MAPBOX_TOKEN;
 
   
 

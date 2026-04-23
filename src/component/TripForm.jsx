@@ -8,6 +8,9 @@ const TripForm = ({
   handleSetSuggestion,
   removeTripAndSuggestion,
   isLoading,
+  destination,
+  setDestination,
+  setIsSelecting,
 }) => {
   return (
     <div className={styles.wrapper}>
@@ -25,8 +28,11 @@ const TripForm = ({
               disabled={isLoading}
               type="text"
               name="destination"
-              value={formData.destination}
-              onChange={handleOnChange}
+              value={destination}
+              onChange={(e) => {
+                setDestination(e.target.value);
+                setIsSelecting(false);
+              }}
               placeholder="Paris, Tokyo…"
               required
               className={styles.input}

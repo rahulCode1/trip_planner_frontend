@@ -8,16 +8,18 @@ import styles from "./TripPlanner.module.css";
 
 const TripPlanner = () => {
   const initialState = {
-    destination: "",
     duration: "",
     budget: "",
   };
   const [formData, setFormData] = useState(initialState);
+  const [destination, setDestination] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isSelecting, setIsSelecting] = useState(false);
   const { trip, setTrip } = useTravelContext();
   const token = process.env.REACT_APP_MAPBOX_TOKEN;
+
+  
 
   const handleOnChange = (e) => {
     setFormData((prevStat) => ({
@@ -37,7 +39,7 @@ const TripPlanner = () => {
     try {
       setIsLoading(true);
       const res = await axios.get(
-        `${process.env.REACT_APP_BACKEND_URL}/api/travel-planner?destination=${formData.destination}&duration=${formData.duration}&budget=${formData.budget}`,
+        `${process.env.REACT_APP_BACKEND_URL}/api/travel-planner?destination=${destination}&duration=${formData.duration}&budget=${formData.budget}`,
       );
 
       setTrip(res.data?.trip);
@@ -63,17 +65,18 @@ const TripPlanner = () => {
   useEffect(() => {
     const handleShowAutoSuggestion = async () => {
       if (isSelecting) {
-        setIsSelecting(false);
         return;
       }
 
-      if (!formData.destination) {
+      console.log(destination)
+
+      if (!destination) {
         return setSuggestions([]);
       }
 
       const delay = setTimeout(async () => {
         const res = await axios.get(
-          `https://api.mapbox.com/geocoding/v5/mapbox.places/${formData.destination}.json?autocomplete=true&types=place,country&access_token=${token}`,
+          `https://api.mapbox.com/geocoding/v5/mapbox.places/${destination}.json?autocomplete=true&types=place,country&access_token=${token}`,
         );
 
         setSuggestions(res.data?.features);
@@ -83,16 +86,18 @@ const TripPlanner = () => {
     };
 
     handleShowAutoSuggestion();
-  }, [formData.destination, isSelecting, token]);
+  }, [destination, isSelecting, token]);
+
+  
 
   const handleSetSuggestion = (suggestion) => {
-    setFormData((prevStat) => ({ ...prevStat, destination: suggestion }));
+    setDestination(suggestion);
     setSuggestions([]);
     setIsSelecting(true);
   };
 
   const removeTripAndSuggestion = () => {
-    setFormData((prevStat) => ({ ...prevStat, destination: "" }));
+    setDestination("");
     setSuggestions([]);
   };
 
@@ -108,6 +113,9 @@ const TripPlanner = () => {
             isLoading={isLoading}
             removeTripAndSuggestion={removeTripAndSuggestion}
             suggestions={suggestions}
+            setIsSelecting={setIsSelecting}
+            setDestination={setDestination}
+            destination={destination}
           />
 
           {trip && <TripPlan trip={trip} />}

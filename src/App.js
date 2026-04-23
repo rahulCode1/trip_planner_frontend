@@ -12,6 +12,7 @@ import TripDetailsPage, {
   loader as tripDetailsLoader,
 } from "./pages/TripDetailsPage";
 import ProctectRoutes from "./component/ProctectRoutes";
+import LocationSearch from "./pages/LocationSearch";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "v1/profile/google",
         element: <VerifyLogin />,
+      },
+      {
+        path: "location",
+        element: <LocationSearch />,
       },
       {
         path: "myTrips",
@@ -57,7 +62,6 @@ const router = createBrowserRouter([
     ],
   },
 ]);
-
 
 function App() {
   return (

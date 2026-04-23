@@ -68,7 +68,7 @@ const TripPlanner = () => {
         return;
       }
 
-      console.log(destination)
+      
 
       if (!destination) {
         return setSuggestions([]);
@@ -76,7 +76,7 @@ const TripPlanner = () => {
 
       const delay = setTimeout(async () => {
         const res = await axios.get(
-          `https://api.mapbox.com/geocoding/v5/mapbox.places/${destination}.json?autocomplete=true&types=place,country&access_token=${token}`,
+          `https://api.mapbox.com/geocoding/v5/mapbox.places/${destination}.json?autocomplete=true&types=place,country&access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`,
         );
 
         setSuggestions(res.data?.features);
@@ -86,7 +86,7 @@ const TripPlanner = () => {
     };
 
     handleShowAutoSuggestion();
-  }, [destination, isSelecting, token]);
+  }, [destination, isSelecting ]);
 
   
 

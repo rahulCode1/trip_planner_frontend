@@ -85,7 +85,7 @@ const TripPlanner = () => {
     };
 
     handleShowAutoSuggestion();
-  }, [destination, isSelecting ]);
+  }, [destination, isSelecting , process.env.REACT_APP_MAPBOX_TOKEN]);
 
   
 

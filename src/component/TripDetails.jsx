@@ -138,31 +138,30 @@ const TripDetails = ({ trip }) => {
 
       {/* Header */}
       <div style={{ position: "relative" }}>
-        <div
-          className={`${styles.sectionCard} d-flex align-items-center gap-3`}
-        >
-          <div className={styles.headerIcon}>
-            <img src={locationImg} alt="" style={{ width: 20 }} />
-          </div>
-          <div>
-            <h2 className="mb-0 fw-bold text-white" style={{ fontSize: 20 }}>
-              {data.destination}
-            </h2>
-            <small className="text-secondary">AI generated travel guide</small>
-          </div>
-        </div>
-        <p
-          style={{
-            position: "absolute",
-            top: 20,
-            right: 20,
-            backgroundColor: `${data?.isTripComplete ? "green" : "red"}`,
-          }}
-          className={`text-light badge }`}
-        >
-          {data?.isTripComplete ? "Completed" : "Not complete yet"}
-        </p>
+  <div className={`${styles.sectionCard} d-flex align-items-center gap-3`}>
+    <div className={styles.headerIcon}>
+      <img src={locationImg} alt="" style={{ width: 20 }} />
+    </div>
+    <div className="d-flex align-items-start align-items-sm-center flex-column flex-sm-row flex-grow-1 gap-2">
+      <div className="flex-grow-1">
+        <h2 className="mb-0 fw-bold text-white" style={{ fontSize: 20 }}>
+          {data.destination}
+        </h2>
+        <small className="text-secondary">AI generated travel guide</small>
       </div>
+      <p
+        style={{
+          backgroundColor: data?.isTripComplete ? "green" : "red",
+          whiteSpace: "nowrap",
+          margin: 0,
+        }}
+        className="text-light badge"
+      >
+        {data?.isTripComplete ? "Completed" : "Not complete yet"}
+      </p>
+    </div>
+  </div>
+</div>
 
       {/* Best time + duration */}
       <div className={`${styles.sectionCard} d-flex align-items-center gap-3`}>

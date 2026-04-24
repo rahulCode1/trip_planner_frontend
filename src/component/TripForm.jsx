@@ -37,7 +37,7 @@ const TripForm = ({
               required
               className={styles.input}
             />
-            {formData.destination && (
+            {destination && (
               <button
                 type="button"
                 className={styles.clearBtn}

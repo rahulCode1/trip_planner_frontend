@@ -37,8 +37,13 @@ const TripPlanner = () => {
     const toastId = toast.loading("Generating trip...");
     try {
       setIsLoading(true);
-      const res = await axios.get(
-        `${process.env.REACT_APP_BACKEND_URL}/api/travel-planner?destination=${destination}&duration=${formData.duration}&budget=${formData.budget}`,
+      const res = await axios.post(
+        `${process.env.REACT_APP_BACKEND_URL}/api/travel-planner`,
+        {
+          destination, 
+          duration: formData.duration,
+          budget: formData.budget
+        }
       );
 
       setTrip(res.data?.trip);

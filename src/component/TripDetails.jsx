@@ -52,8 +52,13 @@ const TripDetails = ({ trip }) => {
     const toastId = loadingToast("Generating trip...");
     try {
       setIsLoading(true);
-      const res = await api.get(
-        `${process.env.REACT_APP_BACKEND_URL}/api/update-trip/${trip.id}?destination=${formData.destination}&duration=${formData.duration}&budget=${formData.budget}`,
+      const res = await api.post(
+        `${process.env.REACT_APP_BACKEND_URL}/api/update-trip/${trip.id}`,
+        {
+          destination: formData.destination,
+          duration: formData.duration,
+          budget: formData.budget
+        }
       );
       setUpdatedTrip(res.data?.updatedTrip);
       setModelOpen(false);
